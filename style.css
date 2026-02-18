@@ -1,0 +1,53 @@
+header {
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.navbar {
+    padding: 10px;
+    margin: 15px;
+    width: 100%;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.navbar ul li {
+    list-style: none;
+    padding: 10px;
+    text-align: center;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+}
+
+ul li a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out;
+}
+
+ul li a:hover::before {
+    width: 100%;
+}
