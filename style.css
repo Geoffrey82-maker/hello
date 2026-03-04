@@ -1,53 +1,87 @@
-header {
-    width: 100%;
-    background-color: black;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
-    font-size: 22px;
-    color: #fff;
-    font-weight: 600;
 }
 
-.navbar {
-    padding: 10px;
-    margin: 15px;
-    width: 100%;
-}
-
-.navbar ul {
+body {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
+    height: 100vh;
+    background: #111;
+    font-family: Arial, sans-serif;
 }
 
-.navbar ul li {
-    list-style: none;
-    padding: 10px;
+.slider {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.slides {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 50%;
+}
+
+button.prev { left: 15px; }
+button.next { right: 15px; }
+
+button:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.dots {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
     text-align: center;
 }
 
-ul li a {
-    text-decoration: none;
-    color: #fff;
-    position: relative;
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    cursor: pointer;
 }
 
-ul li a::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: #fff;
-    transition: width 0.3s ease-in-out;
-}
-
-ul li a:hover::before {
-    width: 100%;
+.dot.active {
+    opacity: 1;
+    background: #ff9800;
 }
